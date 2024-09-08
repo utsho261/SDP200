@@ -29,6 +29,7 @@ The Blood Bank Management System (BBMS) is a desktop application developed in Ja
 1. **Create Database and Tables:**
 
    ```sql
+    CREATE DATABASE bloodbank;
     CREATE TABLE Doner (
        DonerID INT AUTO_INCREMENT PRIMARY KEY,
        Name VARCHAR(100),
