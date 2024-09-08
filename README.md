@@ -62,3 +62,13 @@ The Blood Bank Management System (BBMS) is a Java-based desktop application desi
        RequestDate DATE,
        Status VARCHAR(20)
    );
+   -- Step 5: Insert all blood groups into BloodStock with an initial quantity set to 0
+    INSERT INTO BloodStock (BloodGroup, Quantity) VALUES 
+    ('A+', 0),
+    ('A-', 0),
+    ('B+', 0),
+    ('B-', 0),
+    ('AB+', 0),
+    ('AB-', 0),
+    ('O+', 0),
+    ('O-', 0);
