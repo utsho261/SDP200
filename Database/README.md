@@ -60,3 +60,19 @@ The Blood Bank Management System (BBMS) is a desktop application developed in Ja
        RequestDate DATE,
        Status VARCHAR(20)
    );
+
+   CREATE TABLE BloodStock (
+    BloodGroup VARCHAR(5) PRIMARY KEY,
+    Quantity INT DEFAULT 0
+);
+
+-- Insert all blood groups with initial quantity set to 0
+INSERT INTO BloodStock (BloodGroup, Quantity) VALUES 
+('A+', 0),
+('A-', 0),
+('B+', 0),
+('B-', 0),
+('AB+', 0),
+('AB-', 0),
+('O+', 0),
+('O-', 0);
