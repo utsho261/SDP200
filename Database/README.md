@@ -30,53 +30,53 @@ The Blood Bank Management System (BBMS) is a desktop application developed in Ja
 
    ```sql
     -- Create the Blood Bank database
-CREATE DATABASE bloodbank;
+      CREATE DATABASE bloodbank;
 
--- Use the database
-USE bloodbank;
+   -- Use the database
+     USE bloodbank;
 
--- Create the Doner table
-CREATE TABLE Doner (
-    DonerID INT AUTO_INCREMENT PRIMARY KEY,
-    Name VARCHAR(100),
-    BloodGroup VARCHAR(10),
-    PhoneNumber VARCHAR(15),
-    Email VARCHAR(100)
-);
+   -- Create the Doner table
+    CREATE TABLE Doner (
+       DonerID INT AUTO_INCREMENT PRIMARY KEY,
+       Name VARCHAR(100),
+       BloodGroup VARCHAR(10),
+       PhoneNumber VARCHAR(15),
+        Email VARCHAR(100)
+   );
 
--- Create the BloodStock table
-CREATE TABLE BloodStock (
-    BloodGroup VARCHAR(5) PRIMARY KEY,
-    Quantity INT DEFAULT 0
-);
+   -- Create the BloodStock table
+     CREATE TABLE BloodStock (
+       BloodGroup VARCHAR(5) PRIMARY KEY,
+       Quantity INT DEFAULT 0
+   );
 
--- Create the Donations table
-CREATE TABLE Donations (
-    DonationID INT AUTO_INCREMENT PRIMARY KEY,
-    DonerID INT,
-    BloodGroup VARCHAR(10),
-    DonationDate DATE,
-    Quantity INT,
-    FOREIGN KEY (DonerID) REFERENCES Doner(DonerID)
-);
+   -- Create the Donations table
+   CREATE TABLE Donations (
+      DonationID INT AUTO_INCREMENT PRIMARY KEY,
+      DonerID INT,
+      BloodGroup VARCHAR(10),
+      DonationDate DATE,
+      Quantity INT,
+      FOREIGN KEY (DonerID) REFERENCES Doner(DonerID)
+   );
 
--- Create the PatientRequests table
-CREATE TABLE PatientRequests (
-    RequestID INT AUTO_INCREMENT PRIMARY KEY,
-    PatientID INT,
-    BloodGroup VARCHAR(10),
-    Quantity INT,
-    RequestDate DATE,
-    Status VARCHAR(20)
-);
+   -- Create the PatientRequests table
+    CREATE TABLE PatientRequests (
+      RequestID INT AUTO_INCREMENT PRIMARY KEY,
+      PatientID INT,
+      BloodGroup VARCHAR(10),
+      Quantity INT,
+      RequestDate DATE,
+      Status VARCHAR(20)
+   );
 
--- Insert blood groups with initial quantity set to 0
-INSERT INTO BloodStock (BloodGroup, Quantity) VALUES 
-('A+', 0),
-('A-', 0),
-('B+', 0),
-('B-', 0),
-('AB+', 0),
-('AB-', 0),
-('O+', 0),
-('O-', 0);
+   -- Insert blood groups with initial quantity set to 0
+   INSERT INTO BloodStock (BloodGroup, Quantity) VALUES 
+    ('A+', 0),
+    ('A-', 0),
+    ('B+', 0),
+    ('B-', 0),
+    ('AB+', 0),
+    ('AB-', 0),
+    ('O+', 0),
+    ('O-', 0);
